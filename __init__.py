@@ -13,6 +13,8 @@ class PeerflixSkill(OVOSSkill):
         self.supported_media = [MediaType.GENERIC, MediaType.MOVIE]
         self.peerflix = None
         self.running = False
+        if "min_buffer_percent" not in self.settings:
+            self.settings["min_buffer_percent"] = 2
 
     def initialize(self):
         self.add_event("skill.peerflix.play", self.stream_torrent)
@@ -64,7 +66,7 @@ class PeerflixSkill(OVOSSkill):
                         if "%" in out:
                             n = int(out.split("%")[0].split("(")[-1])
                             self.show_gui(f"Buffering: {n}%")
-                            if n >= 10:
+                            if n >= self.settings["min_buffer_percent"]:
                                 buffered_enough = True
                                 self.ocp_play(message)
                 elif "Verifying downloaded:" in out:
