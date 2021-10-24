@@ -17,8 +17,10 @@ npm install -g peerflix
 
 Some torrent provider skills:
 
-- [RARBG Skill](https://github.com/JarbasSkills/skill-rarbg)
-- [KickassTorrents Skill](https://github.com/JarbasSkills/skill-kickass-torrents)
+- [RARBG](https://github.com/JarbasSkills/skill-rarbg)
+- [KickassTorrents Proxy](https://github.com/JarbasSkills/skill-kickass-torrents-proxy)
+- [Abirhasan Proxy (1337x and the pirate bay)](https://github.com/JarbasSkills/skill-abirhasan-torrent-proxy)
+
 
 # Platform support
 
