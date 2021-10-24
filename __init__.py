@@ -79,6 +79,7 @@ class PeerflixSkill(OVOSSkill):
             except pexpect.exceptions.TIMEOUT:
                 # nothing happened for a while
                 LOG.warning("Peerflix stalled!")
+                self.show_gui("Streaming is slow! Not enough peers")
             except Exception as e:
                 LOG.exception(e)
                 self.running = False
