@@ -1,4 +1,4 @@
-# Peerflix Skill
+# <img src='./ui/magnet.png' card_color='#40DBB0' width='50' height='50' style='vertical-align:bottom'/>Peerflix Skill
 
 Peerflix OCP Skill
 
@@ -6,8 +6,7 @@ Peerflix OCP Skill
 
 Stream torrents in mycroft-gui!
 
-This is a service skill, it is used by torrent providers, by itself it does 
-nothing
+This is a service skill, it is used by torrent providers, by itself it does nothing
 
 You need to manually install peerflix!
 
@@ -20,7 +19,6 @@ Some torrent provider skills:
 - [RARBG](https://github.com/JarbasSkills/skill-rarbg)
 - [KickassTorrents Proxy](https://github.com/JarbasSkills/skill-kickass-torrents-proxy)
 - [Abirhasan Proxy (1337x and the pirate bay)](https://github.com/JarbasSkills/skill-abirhasan-torrent-proxy)
-
 
 # Platform support
 
@@ -45,12 +43,15 @@ Some torrent provider skills:
 - `version` - link to release/commit of platform repo where this was tested
 
 ## Credits
+
 JarbasAl
 
 ## Category
+
 **Entertainment**
 
 ## Tags
+
 - video
 - common play
 - torrent
