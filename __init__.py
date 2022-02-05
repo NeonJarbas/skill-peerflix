@@ -13,10 +13,10 @@ class PeerflixSkill(OVOSSkill):
         self.supported_media = [MediaType.GENERIC, MediaType.MOVIE]
         self.peerflix = None
         self.running = False
-        if "min_buffer_percent" not in self.settings:
-            self.settings["min_buffer_percent"] = 2
 
     def initialize(self):
+        if "min_buffer_percent" not in self.settings:
+            self.settings["min_buffer_percent"] = 2
         self.add_event("skill.peerflix.play", self.stream_torrent)
 
     def shutdown(self):
