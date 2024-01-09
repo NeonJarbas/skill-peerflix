@@ -2,17 +2,17 @@ import signal
 from os.path import join
 
 import pexpect
-from ovos_plugin_common_play.ocp import MediaType, PlaybackType
+from ovos_utils.ocp import MediaType, PlaybackType
 from ovos_utils.log import LOG
 from ovos_workshop.skills.ovos import OVOSSkill
 
 
 class PeerflixSkill(OVOSSkill):
-    def __init__(self):
-        super(PeerflixSkill, self).__init__("Peerflix")
-        self.supported_media = [MediaType.GENERIC, MediaType.MOVIE]
+    def __init__(self, *args, **kwargs):
+        self.supported_media = [MediaType.MOVIE]
         self.peerflix = None
         self.running = False
+        super().__init__(*args, **kwargs)
 
     def initialize(self):
         if "min_buffer_percent" not in self.settings:
@@ -37,7 +37,7 @@ class PeerflixSkill(OVOSSkill):
 
     def show_gui(self, footer_text="Launching peerflix"):
         self.gui["footer_text"] = footer_text
-        self.gui.show_page(join(self.root_dir, "ui", "BusyPage.qml"))
+        self.gui.show_page(join(self.root_dir, "res", "BusyPage.qml"))
 
     def stream_torrent(self, message):
         LOG.debug(f"Streaming torrent: {message.data}")
@@ -83,7 +83,3 @@ class PeerflixSkill(OVOSSkill):
             except Exception as e:
                 LOG.exception(e)
                 self.running = False
-
-
-def create_skill():
-    return PeerflixSkill()
